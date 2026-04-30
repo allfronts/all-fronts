@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Your Free Truck Insurance Quote | All Fronts Insurance</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#f0ede8;color:#333}
+    .header{background:#fff;padding:20px 40px;text-align:center;border-bottom:3px solid #B8962E}
+    .header img{max-width:240px;height:auto}
+    .hero{background:#1C2B6B;padding:40px 20px;text-align:center;border-bottom:4px solid #B8962E}
+    .hero h1{color:#fff;font-size:26px;font-family:Georgia,serif;font-weight:700;line-height:1.3;margin-bottom:10px}
+    .hero h1 span{color:#B8962E}
+    .hero p{color:rgba(255,255,255,0.75);font-size:14px}
+    .container{max-width:780px;margin:0 auto;padding:32px 20px 60px}
+    .trust-bar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px}
+    .trust-item{background:#fff;border:0.5px solid #ddd;border-radius:6px;padding:14px 12px;text-align:center}
+    .trust-item .t-value{color:#B8962E;font-size:20px;font-weight:700;margin-bottom:2px}
+    .trust-item .t-label{color:#888;font-size:11px;text-transform:uppercase;letter-spacing:0.8px}
+    .call-box{background:#fff;border:2px solid #B8962E;border-radius:8px;padding:16px 22px;text-align:center;margin-bottom:24px}
+    .call-box p{color:#1C2B6B;font-size:13px;font-weight:700;margin-bottom:4px}
+    .call-box span{color:#B8962E;font-size:22px;font-weight:700;font-family:Georgia,serif;display:block;margin-bottom:2px}
+    .call-box small{color:#888;font-size:12px}
+    .card{background:#fff;border-radius:8px;border:1px solid #ddd;padding:28px 32px;margin-bottom:24px}
+    .card h2{color:#1C2B6B;font-size:17px;font-weight:700;margin-bottom:6px}
+    .card p.sub{color:#666;font-size:13px;margin-bottom:20px;line-height:1.6}
+    .step-badge{display:inline-block;background:#B8962E;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:10px;letter-spacing:0.5px}
+    .dot-row{display:flex;gap:10px;margin-bottom:12px}
+    .dot-input{flex:1;padding:13px 16px;border:2px solid #ddd;border-radius:6px;font-size:16px;font-family:Arial,sans-serif;color:#1C2B6B;outline:none}
+    .dot-input:focus{border-color:#1C2B6B}
+    .btn-blue{background:#1C2B6B;color:#fff;border:none;border-radius:6px;padding:13px 24px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:Arial,sans-serif}
+    .btn-blue:hover{background:#152055}
+    .btn-blue:disabled{background:#aaa;cursor:not-allowed}
+    .btn-gold{background:#B8962E;color:#fff;border:none;border-radius:6px;padding:13px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:Arial,sans-serif;width:100%}
+    .btn-gold:hover{background:#9e7e25}
+    .status{font-size:13px;padding:6px 0;min-height:18px}
+    .status.loading{color:#B8962E;font-weight:700}
+    .status.error{color:#c0392b}
+    .status.ok{color:#1e7e34;font-weight:700}
+    .results-area{display:none;margin-top:16px}
+    .sec-title{background:#1C2B6B;color:#B8962E;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:6px 6px 0 0;margin-top:14px}
+    .sec-body{border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;background:#fff}
+    .dt{width:100%;border-collapse:collapse;font-size:13px}
+    .dt tr{border-bottom:1px solid #f5f3f0}
+    .dt tr:last-child{border-bottom:none}
+    .dt td{padding:9px 14px;vertical-align:top}
+    .dt td:first-child{color:#999;width:44%;font-size:12px;text-transform:uppercase;letter-spacing:0.5px}
+    .dt td:last-child{color:#1C2B6B;font-weight:700}
+    .badge{display:inline-block;padding:3px 12px;border-radius:12px;font-size:11px;font-weight:700;text-transform:uppercase}
+    .b-green{background:#e6f4ea;color:#1e7e34}
+    .b-red{background:#fdecea;color:#c0392b}
+    .b-gray{background:#f0ede8;color:#666}
+    .insp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px;background:#fff;border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px}
+    .insp-card{background:#f7f5f0;border-radius:6px;padding:12px;text-align:center}
+    .insp-card .ic-type{font-size:11px;color:#888;text-transform:uppercase;margin-bottom:4px}
+    .insp-card .ic-total{font-size:22px;font-weight:700;color:#1C2B6B}
+    .insp-card .ic-oos{font-size:11px;font-weight:700;margin-top:3px}
+    .ic-oos.ok{color:#1e7e34}.ic-oos.warn{color:#c0392b}
+    .cargo-wrap{padding:14px;background:#fff;border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px}
+    .cargo-grid{display:flex;flex-wrap:wrap;gap:6px}
+    .ctag{padding:4px 10px;border-radius:12px;font-size:12px;font-weight:700;border:1px solid #ddd;color:#bbb;background:#f7f5f0}
+    .ctag.on{background:#1C2B6B;color:#fff;border-color:#1C2B6B}
+    .or-divider{display:flex;align-items:center;gap:12px;margin:16px 0}
+    .or-divider hr{flex:1;border:none;border-top:1px solid #e0ddd8}
+    .or-divider span{color:#aaa;font-size:12px;font-weight:700;white-space:nowrap}
+    .fmcsa-note{background:#f0ede8;border:1px solid #ddd;border-radius:6px;padding:12px 16px;font-size:13px;color:#555;line-height:1.7;margin-bottom:12px;display:none}
+    .fmcsa-note a{color:#1C2B6B;font-weight:700}
+    .divider{border:none;border-top:1px solid #eee;margin:20px 0}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .fg{display:flex;flex-direction:column;gap:5px}
+    .fg.full{grid-column:1/-1}
+    .fg label{font-size:11px;font-weight:700;color:#1C2B6B;text-transform:uppercase;letter-spacing:0.8px}
+    .fg input,.fg select,.fg textarea{padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;font-family:Arial,sans-serif;color:#333;outline:none}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#1C2B6B}
+    .fg textarea{resize:vertical;min-height:80px}
+    .btn-submit{width:100%;background:#B8962E;color:#fff;border:none;border-radius:6px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;font-family:Arial,sans-serif;margin-top:8px}
+    .btn-submit:hover{background:#9e7e25}
+    .success{background:#e6f4ea;border:2px solid #1e7e34;border-radius:8px;padding:28px;text-align:center;display:none}
+    .success h3{color:#1e7e34;font-size:20px;margin-bottom:10px}
+    .success p{color:#555;font-size:14px;line-height:1.8}
+    .footer{background:#1C2B6B;padding:22px 40px;text-align:center}
+    .footer p{color:rgba(255,255,255,0.45);font-size:11px;line-height:1.8}
+    @media(max-width:580px){
+      .form-grid,.trust-bar{grid-template-columns:1fr 1fr}
+      .fg.full{grid-column:1/-1}
+      .dot-row{flex-direction:column}
+      .insp-grid{grid-template-columns:1fr 1fr}
+      .card{padding:20px 16px}
+      .header{padding:16px 20px}
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <img src="https://files.constantcontact.com/901e561e701/51f5ce05-93fd-4a21-9402-775f8478ec76.png" alt="All Fronts Insurance Services Inc."/>
+</div>
+<div class="hero">
+  <h1>Get Your Free Commercial Truck<br><span>Insurance Quote Today</span></h1>
+  <p>Takes less than 3 minutes &nbsp;|&nbsp; No obligation &nbsp;|&nbsp; Code: AFI-TRUCK-2025</p>
+</div>
+<div class="container">
+  <div class="trust-bar">
+    <div class="trust-item"><div class="t-value">A+</div><div class="t-label">Rated Carriers</div></div>
+    <div class="trust-item"><div class="t-value">Fast</div><div class="t-label">Same-Day Quotes</div></div>
+    <div class="trust-item"><div class="t-value">24/7</div><div class="t-label">Claims Support</div></div>
+  </div>
+  <div class="call-box">
+    <p>Questions? Call Michael directly:</p>
+    <span>888-878-4252</span>
+    <small>Mon–Fri 8am–6pm EST &nbsp;|&nbsp; Sat 9am–2pm EST &nbsp;|&nbsp; Michael@allfrontsins.com</small>
+  </div>
+
+  <div class="card">
+    <div class="step-badge">STEP 1 OF 2</div>
+    <h2>Look up your USDOT number</h2>
+    <p class="sub">Enter your USDOT number to pull your carrier record from the FMCSA database — company info, authority status, inspections, safety rating, and cargo.</p>
+    <div class="dot-row">
+      <input class="dot-input" type="number" id="dotInput" placeholder="Enter USDOT number (e.g. 2845883)" min="1"/>
+      <button class="btn-blue" id="lookupBtn" onclick="lookupCarrier()">Look Up</button>
+    </div>
+    <div class="status" id="statusMsg"></div>
+    <div class="results-area" id="resultsArea">
+      <div class="sec-title">USDOT Information</div>
+      <div class="sec-body"><table class="dt">
+        <tr><td>Entity Type</td><td id="r-entity">—</td></tr>
+        <tr><td>USDOT Status</td><td id="r-status">—</td></tr>
+        <tr><td>USDOT Number</td><td id="r-dot">—</td></tr>
+        <tr><td>MC / MX Number</td><td id="r-mc">—</td></tr>
+        <tr><td>Out of Service Date</td><td id="r-oos">—</td></tr>
+        <tr><td>MCS-150 Form Date</td><td id="r-mcs">—</td></tr>
+        <tr><td>MCS-150 Mileage (Year)</td><td id="r-miles">—</td></tr>
+        <tr><td>State Carrier ID</td><td id="r-state">—</td></tr>
+      </table></div>
+      <div class="sec-title">Operating Authority</div>
+      <div class="sec-body"><table class="dt">
+        <tr><td>Authority Status</td><td id="r-auth">—</td></tr>
+        <tr><td>Operation Type</td><td id="r-optype">—</td></tr>
+        <tr><td>Carrier Operation</td><td id="r-carop">—</td></tr>
+      </table></div>
+      <div class="sec-title">Company Information</div>
+      <div class="sec-body"><table class="dt">
+        <tr><td>Legal Name</td><td id="r-legal">—</td></tr>
+        <tr><td>DBA Name</td><td id="r-dba">—</td></tr>
+        <tr><td>Physical Address</td><td id="r-phys">—</td></tr>
+        <tr><td>Mailing Address</td><td id="r-mail">—</td></tr>
+        <tr><td>Phone</td><td id="r-phone">—</td></tr>
+        <tr><td>Power Units</td><td id="r-units">—</td></tr>
+        <tr><td>Drivers</td><td id="r-drivers">—</td></tr>
+      </table></div>
+      <div class="sec-title">Cargo Carried</div>
+      <div class="cargo-wrap"><div class="cargo-grid" id="r-cargo"></div></div>
+      <div class="sec-title">Inspections — Last 24 Months</div>
+      <div class="insp-grid" id="r-insp"></div>
+      <div class="sec-title">Safety Rating</div>
+      <div class="sec-body"><table class="dt">
+        <tr><td>Safety Rating</td><td id="r-rating">—</td></tr>
+        <tr><td>Rating Date</td><td id="r-rdate">—</td></tr>
+      </table></div>
+    </div>
+    <div class="or-divider"><hr><span>OR — Can't load automatically? Use this:</span><hr></div>
+    <div class="fmcsa-note" id="fmcsaNote">
+      Your FMCSA record is ready: <a id="fmcsaLink" href="#" target="_blank" rel="noopener">Click here to open your official carrier record on FMCSA.gov</a> — review it, then fill in Step 2 below.
+    </div>
+    <button class="btn-gold" onclick="openFMCSA()">Open My FMCSA Record on the Official Government Site</button>
+  </div>
+
+  <div class="card" id="quoteForm">
+    <div class="step-badge">STEP 2 OF 2</div>
+    <h2>Complete your quote request</h2>
+    <p class="sub">Fill in your contact details and Michael will reach out with a personalized quote — usually same business day.</p>
+    <div class="form-grid">
+      <div class="fg"><label>First Name *</label><input type="text" id="fName" placeholder="John"/></div>
+      <div class="fg"><label>Last Name *</label><input type="text" id="lName" placeholder="Smith"/></div>
+      <div class="fg"><label>Phone *</label><input type="tel" id="fPhone" placeholder="(555) 123-4567"/></div>
+      <div class="fg"><label>Email *</label><input type="email" id="fEmail" placeholder="john@example.com"/></div>
+      <div class="fg"><label>USDOT Number</label><input type="text" id="fDot" placeholder="Your DOT #"/></div>
+      <div class="fg"><label>Number of Trucks</label>
+        <select id="fTrucks">
+          <option value="">Select...</option>
+          <option>1 (Owner-Operator)</option>
+          <option>2-5 trucks</option>
+          <option>6-10 trucks</option>
+          <option>11-20 trucks</option>
+          <option>20+ trucks</option>
+        </select>
+      </div>
+      <div class="fg"><label>Type of Cargo</label>
+        <select id="fCargo">
+          <option value="">Select...</option>
+          <option>General Freight</option>
+          <option>Refrigerated Food</option>
+          <option>Flatbed / Heavy Haul</option>
+          <option>Hazmat</option>
+          <option>Auto Transport</option>
+          <option>Tanker / Liquid</option>
+          <option>Construction</option>
+          <option>Livestock</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Current Insurer</label><input type="text" id="fInsurer" placeholder="e.g. Progressive..."/></div>
+      <div class="fg"><label>Current Monthly Premium</label><input type="text" id="fPremium" placeholder="e.g. $1,200/month"/></div>
+      <div class="fg"><label>Best Time to Call</label>
+        <select id="fCallTime">
+          <option value="">Select...</option>
+          <option>Morning (8am–12pm EST)</option>
+          <option>Afternoon (12pm–4pm EST)</option>
+          <option>Evening (4pm–6pm EST)</option>
+          <option>Saturday (9am–2pm EST)</option>
+        </select>
+      </div>
+      <div class="fg full"><label>Additional Notes</label><textarea id="fNotes" placeholder="Tell us about your routes, coverage needs, or any questions..."></textarea></div>
+    </div>
+    <hr class="divider"/>
+    <button class="btn-submit" onclick="submitQuote()">Submit My Free Quote Request</button>
+  </div>
+
+  <div class="success" id="successMsg">
+    <h3>Thank you — your request has been received!</h3>
+    <p>Michael will review your FMCSA record and contact you within 1 business day.<br><br>
+    Call <strong style="color:#1C2B6B;">888-878-4252</strong> &nbsp;|&nbsp; Email <strong style="color:#1C2B6B;">Michael@allfrontsins.com</strong></p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>All Fronts Insurance Services Inc. &nbsp;|&nbsp; Michael@allfrontsins.com &nbsp;|&nbsp; 888-878-4252<br>
+  Licensed Commercial Truck Insurance Specialists &nbsp;|&nbsp; Code: AFI-TRUCK-2025</p>
+</div>
+
+<script>
+const WK='ee14415650ad4ebab6bc0b76b3bc2dd3';
+const CARGO_MAP=[['General Freight','cargoGeneralFreight'],['Household Goods','cargoHouseholdGoods'],['Metal: sheets, coils, rolls','cargoMetal'],['Motor Vehicles','cargoMotorVehicles'],['Drive/Tow away','cargoDriveTow'],['Logs, Poles, Beams, Lumber','cargoLogs'],['Building Materials','cargoBuildingMaterial'],['Mobile Homes','cargoMobileHomes'],['Machinery, Large Objects','cargoMachinery'],['Fresh Produce','cargoFreshProduce'],['Liquids/Gases','cargoLiquidGas'],['Intermodal Cont.','cargoIntermodal'],['Passengers','cargoPassengers'],['Oilfield Equipment','cargoOilfield'],['Livestock','cargoLivestock'],['Grain, Feed, Hay','cargoGrain'],['Coal/Coke','cargoCoalCoke'],['Meat','cargoMeat'],['Garbage/Refuse','cargoGarbage'],['US Mail','cargoUSMail'],['Chemicals','cargoChemicals'],['Commodities Dry Bulk','cargoCommodities'],['Refrigerated Food','cargoRefrigerated'],['Beverages','cargoBeverages'],['Paper Products','cargoPaperProducts'],['Utilities','cargoUtilities'],['Agricultural/Farm Supplies','cargoAgricultural'],['Construction','cargoConstruction'],['Water Well','cargoWaterWell']];
+function s(id,v){const e=document.getElementById(id);if(e)e.innerHTML=v||'—';}
+function b(t,c){return '<span class="badge '+c+'">'+t+'</span>';}
+function getDot(){return document.getElementById('dotInput').value.trim();}
+
+function openFMCSA(){
+  const dot=getDot();
+  if(!dot||isNaN(dot)||dot.length<4){alert('Please enter your USDOT number in the field above first.');return;}
+  const url='https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string='+dot;
+  window.open(url,'_blank');
+  document.getElementById('fDot').value=dot;
+  document.getElementById('fmcsaLink').href=url;
+  document.getElementById('fmcsaNote').style.display='block';
+  document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+async function lookupCarrier(){
+  const dot=getDot();
+  const statusEl=document.getElementById('statusMsg');
+  const btn=document.getElementById('lookupBtn');
+  const area=document.getElementById('resultsArea');
+  if(!dot||isNaN(dot)||dot.length<4){statusEl.className='status error';statusEl.textContent='Please enter a valid USDOT number (at least 4 digits).';return;}
+  btn.disabled=true;btn.textContent='Searching...';
+  statusEl.className='status loading';statusEl.textContent='Contacting FMCSA — please wait...';
+  area.style.display='none';
+  const apiUrl='https://mobile.fmcsa.dot.gov/qc/services/carriers/'+dot+'?webKey='+WK;
+  const tries=[
+    ()=>fetch('https://corsproxy.io/?'+encodeURIComponent(apiUrl),{signal:AbortSignal.timeout(10000)}),
+    ()=>fetch('https://api.allorigins.win/raw?url='+encodeURIComponent(apiUrl),{signal:AbortSignal.timeout(10000)}),
+    ()=>fetch('https://thingproxy.freeboard.io/fetch/'+apiUrl,{signal:AbortSignal.timeout(10000)}),
+    ()=>fetch('https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(apiUrl),{signal:AbortSignal.timeout(10000)})
+  ];
+  let carrier=null;
+  for(const tryFn of tries){
+    try{
+      const r=await tryFn();
+      if(!r.ok)continue;
+      const txt=await r.text();
+      if(!txt||!txt.includes('carrier'))continue;
+      let j;try{j=JSON.parse(txt);}catch(e){continue;}
+      carrier=j?.content?.carrier||j?.carrier||null;
+      if(carrier)break;
+    }catch(e){continue;}
+  }
+  if(carrier){
+    fillResults(carrier,dot);
+    statusEl.className='status ok';statusEl.textContent='Carrier record loaded successfully from FMCSA for DOT #'+dot;
+    area.style.display='block';
+    document.getElementById('fDot').value=dot;
+    area.scrollIntoView({behavior:'smooth',block:'start'});
+  }else{
+    statusEl.className='status error';
+    statusEl.textContent='Auto-lookup is unavailable right now. Click the gold button below to open your FMCSA record on the official government website.';
+  }
+  btn.disabled=false;btn.textContent='Look Up';
+}
+
+function fillResults(c,dot){
+  const active=c.allowedToOperate==='Y';
+  s('r-entity',c.entityType);s('r-status',active?b('ACTIVE','b-green'):b('INACTIVE','b-red'));
+  s('r-dot',c.dotNumber||dot);s('r-mc',c.mcNumber?'MC-'+c.mcNumber:c.mxNumber?'MX-'+c.mxNumber:'—');
+  s('r-oos',c.outOfServiceDate||'None');s('r-mcs',c.mcs150FormDate||'—');
+  s('r-miles',c.mcs150Mileage?Number(c.mcs150Mileage).toLocaleString()+(c.mcs150MileageYear?' ('+c.mcs150MileageYear+')':''):'—');
+  s('r-state',c.stateCarrierId||'—');
+  s('r-auth',active?b('AUTHORIZED FOR Property','b-green'):b('NOT AUTHORIZED','b-red'));
+  const ops=[];if(c.authForHire==='X')ops.push('Auth. For Hire');if(c.exemptForHire==='X')ops.push('Exempt For Hire');if(c.privateProperty==='X')ops.push('Private (Property)');
+  s('r-optype',ops.join(', ')||'—');
+  const cops=[];if(c.interstate==='X')cops.push('Interstate');if(c.intrastate==='X')cops.push('Intrastate Only');
+  s('r-carop',cops.join(', ')||'—');
+  s('r-legal',c.legalName||'—');s('r-dba',c.dbaName||'—');
+  s('r-phys',[c.phyStreet,c.phyCity,c.phyState,c.phyZipcode].filter(Boolean).join(', ')||'—');
+  s('r-mail',[c.mailStreet,c.mailCity,c.mailState,c.mailZipcode].filter(Boolean).join(', ')||'—');
+  s('r-phone',c.telephone||'—');s('r-units',c.totalPowerUnits||'—');s('r-drivers',c.totalDrivers||'—');
+  const cg=document.getElementById('r-cargo');cg.innerHTML='';
+  CARGO_MAP.forEach(([label,field])=>{const t=document.createElement('span');t.className='ctag'+(c[field]==='X'?' on':'');t.textContent=label;cg.appendChild(t);});
+  const ig=document.getElementById('r-insp');
+  const types=[{l:'Vehicle',tot:c.vehicleInspTotal||0,oos:c.vehicleOosTotal||0,rate:c.vehicleOosRate},{l:'Driver',tot:c.driverInspTotal||0,oos:c.driverOosTotal||0,rate:c.driverOosRate},{l:'Hazmat',tot:c.hazmatInspTotal||0,oos:c.hazmatOosTotal||0,rate:c.hazmatOosRate},{l:'IEP',tot:c.iepInspTotal||0,oos:c.iepOosTotal||0,rate:c.iepOosRate}];
+  ig.innerHTML=types.map(t=>{const rt=t.rate?parseFloat(t.rate).toFixed(1)+'%':'0%';const ok=parseFloat(t.rate||0)<5;return '<div class="insp-card"><div class="ic-type">'+t.l+'</div><div class="ic-total">'+t.tot+'</div><div class="ic-oos '+(ok?'ok':'warn')+'">OOS: '+t.oos+' ('+rt+')</div></div>';}).join('');
+  const rating=c.safetyRating||'Not Rated';
+  s('r-rating',rating==='Satisfactory'?b(rating,'b-green'):rating==='Unsatisfactory'?b(rating,'b-red'):b(rating,'b-gray'));
+  s('r-rdate',c.safetyRatingDate||'—');
+  if(c.telephone)document.getElementById('fPhone').value=c.telephone;
+  const u=parseInt(c.totalPowerUnits||0);const sel=document.getElementById('fTrucks');
+  if(u===1)sel.value='1 (Owner-Operator)';else if(u<=5)sel.value='2-5 trucks';else if(u<=10)sel.value='6-10 trucks';else if(u<=20)sel.value='11-20 trucks';else if(u>20)sel.value='20+ trucks';
+  const mc=c.mcNumber?'MC-'+c.mcNumber:'—';
+  document.getElementById('fNotes').value='DOT: '+(c.dotNumber||dot)+'\nCarrier: '+(c.legalName||'')+'\nMC: '+mc+'\nPower Units: '+(c.totalPowerUnits||'')+'\nDrivers: '+(c.totalDrivers||'')+'\nSafety Rating: '+rating+'\nStatus: '+(active?'Authorized':'Not Authorized');
+}
+
+function submitQuote(){
+  let ok=true;
+  ['fName','lName','fPhone','fEmail'].forEach(id=>{const el=document.getElementById(id);if(!el.value.trim()){el.style.borderColor='#c0392b';ok=false;}else el.style.borderColor='#ddd';});
+  if(!ok){alert('Please fill in all required fields: First Name, Last Name, Phone, and Email.');return;}
+  const dot=document.getElementById('fDot').value||getDot();
+  const fn=document.getElementById('fName').value;const ln=document.getElementById('lName').value;
+  const fmcsaUrl=dot?'https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string='+dot:'N/A';
+  const subj=encodeURIComponent('Quote Request - '+fn+' '+ln+' (DOT: '+dot+') | AFI-TRUCK-2025');
+  const body=encodeURIComponent('NEW QUOTE REQUEST - AFI-TRUCK-2025\n\nUSDOT: '+dot+'\nFMCSA Record: '+fmcsaUrl+'\n\nName: '+fn+' '+ln+'\nPhone: '+document.getElementById('fPhone').value+'\nEmail: '+document.getElementById('fEmail').value+'\nTrucks: '+document.getElementById('fTrucks').value+'\nCargo: '+document.getElementById('fCargo').value+'\nCurrent Insurer: '+document.getElementById('fInsurer').value+'\nCurrent Premium: '+document.getElementById('fPremium').value+'\nBest Time to Call: '+document.getElementById('fCallTime').value+'\n\nNotes:\n'+document.getElementById('fNotes').value);
+  window.location.href='mailto:Michael@allfrontsins.com?subject='+subj+'&body='+body;
+  document.getElementById('quoteForm').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+  document.getElementById('successMsg').scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('dotInput').addEventListener('keypress',e=>{if(e.key==='Enter')lookupCarrier();});
+</script>
+</body>
+</html>
